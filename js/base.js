@@ -426,7 +426,9 @@ async function conn(func = null, popup = false) {
         if (func != null) {
             await func();
         }
+      
         location.reload();
+        console.log(accounts)
     } catch (err) {
         if (err == 'ReferenceError: ethereum is not defined') {
             alert('Use Dapp to connect wallet!');
