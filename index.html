@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>The RABBIT Protocol | The Decentralized Reserve Currency</title>
+    <meta
+        content="RABBIT is building a community-owned decentralized financial infrastructure to bring more stability and transparency for the world."
+        name="description">
+    <meta content="The RABBIT Protocol | The Decentralized Reserve Currency" property="og:title">
+    <meta
+        content="RABBIT is building a community-owned decentralized financial infrastructure to bring more stability and transparency for the world."
+        property="og:description">
+    <meta content="./assets/RABBIT.png" property="og:image">
+    <meta content="The RABBIT Protocol | The Decentralized Reserve Currency" property="twitter:title">
+    <meta
+        content="RABBIT is building a community-owned decentralized financial infrastructure to bring more stability and transparency for the world."
+        property="twitter:description">
+    <meta content="./assets/RABBIT.png" property="twitter:image">
+    <meta property="og:type" content="website">
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <link href="./assets/RABBIT.png" rel="shortcut icon" type="image/x-icon">
+    <link href="./assets/RABBIT.png" rel="apple-touch-icon">
+
+    <meta name="twitter:image" content="./assets/RABBIT.png">
+    <meta name="twitter:description"
+        content="RABBIT is building a community-owned decentralized financial infrastructure to bring more stability and transparency for the world.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The RABBIT Protocol | The Decentralized Reserve Currency">
+
+    <meta property="og:image" content="./assets/RABBIT.png">
+</head>
+<!--Fork of carrto website. simple and easy to use-->
+
+<body>
+    <div style="text-align: center;">
+        <div class="container pt-3">
+            <div class="px-sm-3 ">
+
+                <table style="width:100%;height:50px">
+                    <tr>
+                        <td style="text-align: left;">
+                        </td>
+                        <td style="width:200px;text-align: right;">  
+                          <button id="connect" type="button" class="btn" style="background-color: #FF494A;color:white">
+                              Connect Wallet
+                          </button>
+                        </td>
+                    </tr>
+                </table>
+
+                <table style="width:100%;height:100px">
+                    <tr>
+                        <td style="width:20px;text-align: left;">
+                        </td>
+                        <td class="headerTop" style="text-align: center;font-size: 88px;margin: 4rem 0;color:white;font-weight: 700;font-family:DM Sans,sans-serif;">
+                            Rabbits
+                        </td>
+                        <td style="width:20px;text-align: right;">  
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="text-center">
+                    <div class="row row-cols-1 row-cols-sm-2">
+                        <div class="mb-2">
+                            <div class="card">
+                                <div class="img-div" style="width:100%;text-align: center;padding-bottom:30px;height: 535px;">
+                                    <img src="./assets/RABBIT.png" alt="logo-icon" class="img-logo" style="width:50%; border-radius: 16px;" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <div class="card">
+                                <div class="text-secondary">
+                                    <div style="text-align: left;border:none; padding: 35px;font-size:14px;color:black;line-height:28px;font-family: DM Sans,sans-serif;font-weight: 500;">
+                                      <div style="margin-bottom:30px">
+                                        The notorious Rabbit Cartel are running wild globally and causing a unprecedented rabbit shortage! The rabbit supply decreases rapidly with 0.003% per block... The only way to protect your rabbits is to put them in the vault.
+                                        <br />
+                                        There are three types of vaults. Full protec vault will protect your precious RABBITS FULLY by adding your RABBITS as swap liquidity and it won't be affected by debase. Full protec vault has no locking period but no rewards. The other two vaults will protect your RABBITS fully in the form of rewards. The rewards are 100 RABBITS per block. Big protec vault earns you 8/10 of the rewards by staking RABBITS/USDT LP on PancakeSwap. The smol protec vault earns you only 2/10 of the rewards. Both of these vaults have a locking period of 7 days.
+                                      </div>
+                                      <div class="row row-cols-1 row-cols-sm-3 text-center">
+                                          <div class="mb-3">
+                                            <div class="col" style="background-color: darkgoldenrod;">
+                                              <a target="_blank" style="color:white !important;text-decoration: none;" href="https://pancakeswap.finance/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0x4Ce4Fb54129Cd4A8A3Cba7b604D6507eb398E709">Swap</a>
+                                            </div>
+                                          </div>
+                                          
+                                          <div class="mb-3">
+                                            <div class="col" style="background-color: darkgoldenrod;">
+                                              <a target="_blank" style="color:white !important;text-decoration: none;" href="https://www.defined.fi/arb/0x5bcb14eeb3739a2140ea23535c96394597c85e82">Chart</a>
+                                            </div>
+                                          </div>
+
+                                          <div class="mb-3">
+                                            <div class="col" style="background-color: darkgoldenrod;">
+                                              <a target="_blank" style="color:white !important;text-decoration: none;" href="https://docs.redrabbithole.xyz/">Docs</a>
+                                            </div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="height:60px"></div>
+
+                <div class="card border text-center p-4">
+                    <div class="row row-cols-1 row-cols-sm-2">
+
+                        <div class="mb-2">
+                          <div class="col">
+                            <div class="text-secondary mb-1">
+                                Your Total Rabbits
+                            </div>
+                            <h4 id="totalBalance" class="fw-bold">Loading</h4>
+                          </div>
+                        </div>
+
+                        <div class="mb-2">
+                          <div class="col">
+                            <div class="text-secondary mb-1">
+                                Your Total Estimated Balance Value
+                            </div>
+                            <h4 id="totalBalanceInUsd" class="fw-bold">Loading</h4>
+                          </div>  
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="height:20px"></div>
+
+                <div class="card border text-center p-4">
+                    <div class="row row-cols-1 row-cols-sm-3">
+
+                        <div class="mb-3">
+                          <div class="col">
+                            <div class="text-secondary mb-1">
+                                Usdt In Pool 
+                            </div>
+                            <h4 id="usdtInPool" class="fw-bold">Loading</h4>
+                          </div>
+                        </div>
+
+                        <div class="mb-3">
+                          <div class="col">
+                            <div class="text-secondary mb-1">
+                                Rabbits In Pool 
+                            </div>
+                            <h4 id="rabbitsInPool" class="fw-bold">Loading</h4>
+                          </div>  
+                        </div>
+
+                        <div class="mb-3">
+                          <div class="col">
+                            <div class="text-secondary mb-1">$RABBIT Price</div>
+                            <h4 id="rabbitPrice" class="fw-bold">Loading</h4>
+                          </div>  
+                        </div>
+
+                        <div class="mb-3">
+                          <div class="col">
+                            <div class="text-secondary mb-1">
+                                Init Supply
+                            </div>
+                            <h4 id="initSupply" class="fw-bold">Loading</h4>
+                          </div>  
+                        </div>
+
+                        <div class="mb-3">
+                          <div class="col">
+                            <div class="text-secondary mb-1">
+                                Current Supply
+                            </div>
+                            <h4 id="currentSupply" class="fw-bold">Loading</h4>
+                          </div>  
+                        </div>
+
+                        <div class="mb-3">
+                          <div class="col">
+                            <div class="text-secondary mb-1">
+                                Scaling Supply Rate
+                            </div>
+                            <h4 id="scalingSupplyRate" class="fw-bold">~%</h4>
+                          </div>  
+                        </div>
+
+                        <div class="mb-3">
+                          <div class="col">
+                            <div class="text-secondary mb-1">
+                                Staked Rate
+                            </div>
+                            <h4 id="stakedRate" class="fw-bold">~%</h4>
+                          </div>  
+                        </div>
+
+                        <div class="mb-3">
+                          <div class="col">
+                            <div class="text-secondary mb-1">Unstaked Burning</div>
+                            <h4 id="unStaked" class="fw-bold">Loading</h4>
+                          </div>  
+                        </div>
+
+                        <div class="mb-3">
+                          <div class="col">
+                            <div class="text-secondary mb-1">Total Staked</div>
+                            <h4 id="totalStaked" class="fw-bold">Loading</h4>
+                          </div>  
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="height:60px"></div>
+
+                <div class="card border text-center p-4">
+                    <div class="row row-cols-1 row-cols-sm-2">
+                        <div class="mb-2">
+                          <div class="col">
+                            <div class="text-secondary mb-1">
+                                Burned Ratio Per Block
+                            </div>
+                            <h4 id="burnedRatioPerBlock" class="fw-bold">Loading</h4>
+                          </div>
+                        </div>
+                        <div class="mb-2">
+                          <div class="col">
+                            <div class="text-secondary mb-1">
+                                Reward for Rabbit Staking
+                            </div>
+                            <h4 id="rewardPerBlock" class="fw-bold">Loading</h4>
+                          </div>
+                        </div>
+                    </div>
+                </div>                
+                
+                <div style="height:20px"></div>
+
+                <div class="text-center">
+                    <div class="row row-cols-1 row-cols-sm-2">
+                        <div class="mb-2">
+                            <div class="card">
+                              <div class="text-center p-4" style="padding-bottom:5px !important">
+                                    <div class="row row-cols-1 row-cols-sm-2">
+
+                                        <div class="mb-2">
+                                          <div class="col">
+                                            <div class="text-secondary mb-1">
+                                                APR
+                                            </div>
+                                            <h4 id="apy" class="fw-bold">Loading...</h4>
+                                          </div>
+                                        </div>
+
+                                        <div class="mb-2">
+                                          <div class="col">
+                                            <div class="text-secondary mb-1">
+                                                Daily ROI
+                                            </div>
+                                            <h4 id="dailyroi" class="fw-bold">Loading...</h4>
+                                          </div>  
+                                        </div>
+
+                                        <div class="mb-2">
+                                          <div class="col">
+                                            <div class="text-secondary mb-1">
+                                                Your burning $RABBIT 
+                                            </div>
+                                            <h4 id="balance" class="fw-bold">Loading</h4>
+                                          </div>  
+                                        </div>
+
+                                        <div class="mb-2">
+                                          <div class="col">
+                                            <div class="text-secondary mb-1">
+                                                Your Staked Amount
+                                            </div>
+                                            <h4 id="staked" class="fw-bold">Loading</h4>
+                                          </div>  
+                                        </div>
+
+                                        <div class="mb-2">
+                                          <div class="col">
+                                            <div class="text-secondary mb-1">Locked until</div>
+                                            <h4 id="lockUntil" class="fw-bold">Loading</h4>
+                                          </div>  
+                                        </div>
+
+                                        <div class="mb-2">
+                                          <div class="col">
+                                            <div class="text-secondary mb-1">Pending Rewards</div>
+                                            <h4 id="pending" class="fw-bold">Loading</h4>
+                                          </div>  
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div style="padding:25px;padding-top:0px">
+                                    <button id="claim" class="btn rounded-2 show mt-2" type="button" id="dropdownMenuButton1"
+                                        aria-expanded="true" data-bs-offset="0,14">
+                                        <span class="fw-medium ms-1">Claim Rewards</span>
+                                        <span id="loadingClaim" style="display:none"><img src="assets/loading.gif" /></span>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div class="mb-2">
+                            <div class="col" style="padding:25px">
+                                <div id="depositlp-div">
+                                    <div class="col-sm-12">
+                                        <div for="amount" class="form-label fw-medium" style="text-align: left;padding-left: 5px;">Stake Amount</div>
+                                        <div class="input-group border-secondary rounded-1 mb-3" style="background-color: white;">
+                                            <input type="text" id="amount"
+                                                class="form-control py-2 px-3 border-0 text-secondary"
+                                                aria-describedby="amount-addon" value="0" placeholder="Amount">
+                                            <span id="setMaxToAmount" class="input-group-text rounded-2 border-0" style="cursor: pointer;padding-left:15px;padding-right:15px">max</span>
+                                        </div>
+                                    </div>
+                                    <button id="stake" class="btn rounded-2" type="button"
+                                        aria-expanded="true" data-bs-offset="0,14">
+                                        <span class="fw-medium ms-1">Deposit</span>
+                                        <span id="loadingStake" style="display:none"><img src="assets/loading.gif" /></span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div style="height:35px"></div>
+
+                            <div class="col" style="padding:25px">
+                                <div id="withdrawlp-div">
+                                    <div class="col-sm-12">
+                                        <div for="amount" class="form-label fw-medium" style="text-align: left;padding-left: 5px;"> Withdraw Amount</div>
+                                        <div class="input-group border-secondary rounded-1 mb-3" style="background-color: white;">
+                                            <input type="text" id="amountW"
+                                                class="form-control py-2 px-3 border-0 text-secondary"
+                                                aria-describedby="amount-addon" value="0" placeholder="Amount">
+                                            <span id="setMaxToAmountW" class="input-group-text rounded-2 border-0" style="cursor: pointer;padding-left:15px;padding-right:15px">max</span>
+                                        </div>
+                                    </div>
+                                    <button id="withdraw" class="btn rounded-2 show" type="button" id="dropdownMenuButton1"
+                                        aria-expanded="true" data-bs-offset="0,14">
+                                        <span class="fw-medium ms-1">Withdraw</span>
+                                        <span id="loadingWithdraw" style="display:none"><img src="assets/loading.gif" /></span>
+                                    </button>
+                                </div>
+                
+                                
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="height:60px"></div>
+
+                <div class="card border text-center p-4">
+                    <div class="row row-cols-1 row-cols-sm-1">
+
+                        <div class="mb-1">
+                          <div class="col">
+                            <div class="text-secondary mb-1">
+                                Reward for LP Staking
+                            </div>
+                            <h4 id="rewardPerBlocklp" class="fw-bold">Loading</h4>
+                          </div>
+                        </div>
+                    </div>
+                </div>                
+                
+                <div style="height:30px"></div>
+
+                <div class="text-center">
+                  <div class="row row-cols-1 row-cols-sm-2">
+
+                      <div class="mb-2">
+                          <div class="card">
+                              <div class="text-center p-4" style="padding-bottom:5px !important">
+                                  <div class="row row-cols-1 row-cols-sm-2">
+                                      <div class="mb-2">
+                                        <div class="col">
+                                          <div class="text-secondary mb-1">
+                                              $LP APR
+                                          </div>
+                                          <h4 id="apylp" class="fw-bold">Loading...</h4>
+                                        </div>
+                                      </div>
+
+                                      <div class="mb-2">
+                                        <div class="col">
+                                          <div class="text-secondary mb-1">
+                                              $LP Daily ROI
+                                          </div>
+                                          <h4 id="dailyroilp" class="fw-bold">Loading...</h4>
+                                        </div>  
+                                      </div>
+
+                                      <div class="mb-2">
+                                        <div class="col">
+                                          <div class="text-secondary mb-1">Your Protected $LP</div>
+                                          <h4 id="balancelp" class="fw-bold">Loading</h4>
+                                        </div>  
+                                      </div>
+
+                                      <div class="mb-2">
+                                        <div class="col">
+                                          <div class="text-secondary mb-1">
+                                              Your Staked $LP
+                                          </div>
+                                          <h4 id="stakedlp" class="fw-bold">Loading</h4>
+                                        </div>  
+                                      </div>
+
+                                      <div class="mb-2">
+                                        <div class="col">
+                                          <div class="text-secondary mb-1">Locked $LP until</div>
+                                          <h4 id="lockUntillp" class="fw-bold">Loading</h4>
+                                        </div>  
+                                      </div>
+
+                                      <div class="mb-2">
+                                        <div class="col">
+                                          <div class="text-secondary mb-1">Pending Rewards for LP</div>
+                                          <h4 id="pendinglp" class="fw-bold">Loading</h4>
+                                        </div>  
+                                      </div>
+
+                                  </div>
+                              </div>
+                              <div style="padding:25px;padding-top:0px">
+                                  <button id="claimlp" class="btn rounded-2 show mt-2" type="button" id="dropdownMenuButton1"
+                                      aria-expanded="true" data-bs-offset="0,14">
+                                      <span class="fw-medium ms-1">Claim Rewards for LP</span>
+                                      <span id="loadingClaimlp" style="display:none"><img src="assets/loading.gif" /></span>
+                                  </button>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="mb-2">
+                          <div class="col" style="padding:25px">
+
+                              <div id="depositlp-div">
+                                  <div class="col-sm-12">
+                                      <div for="amount" class="form-label fw-medium" style="text-align: left;padding-left: 5px;"> Stake $LP Amount</div>
+                                      <div class="input-group border-secondary rounded-1 mb-3" style="background-color: white;">
+                                          <input type="text" id="amountlp"
+                                              class="form-control py-2 px-3 border-0 text-secondary"
+                                              aria-describedby="amount-addon" value="0" placeholder="Amount">
+                                          <span id="setMaxToAmountlp" class="input-group-text rounded-2 border-0" style="cursor: pointer;padding-left:15px;padding-right:15px">max</span>
+                                      </div>
+                                  </div>
+                                  <button id="stakelp" style="display: none" class="btn rounded-2 hide" type="button"
+                                      aria-expanded="true" data-bs-offset="0,14">
+                                      <span class="fw-medium ms-1">Deposit</span>
+                                      <span id="loadingStakelp" style="display:none"><img src="assets/loading.gif" /></span>
+                                  </button>
+                                  <button id="approvelp" class="btn rounded-2 show" type="button"
+                                      aria-expanded="true" data-bs-offset="0,14">
+                                      <span class="fw-medium ms-1">Approve</span>
+                                      <span id="loadingApprovelp" style="display:none"><img src="assets/loading.gif" /></span>
+                                  </button>
+                              </div>
+                          </div>
+
+                          <div style="height:35px"></div>
+
+                          <div class="col" style="padding:25px">
+                              <div id="withdrawlp-div">
+                                  <div class="col-sm-12">
+                                      <div for="amountlp" class="form-label fw-medium" style="text-align: left;padding-left: 5px;"> Withdraw $LP Amount</div>
+                                      <div class="input-group border-secondary rounded-1 mb-3" style="background-color: white;">
+                                          <input type="text" id="amountWlp"
+                                              class="form-control py-2 px-3 border-0 text-secondary"
+                                              aria-describedby="amount-addon" value="0" placeholder="Amount">
+                                          <span id="setMaxToAmountWlp" class="input-group-text rounded-2 border-0" style="cursor: pointer;padding-left:15px;padding-right:15px">max</span>
+                                      </div>
+                                  </div>
+                                  <button id="withdrawlp" class="btn rounded-2 show" type="button" id="dropdownMenuButton1"
+                                      aria-expanded="true" data-bs-offset="0,14">
+                                      <span class="fw-medium ms-1">Withdraw</span>
+                                      <span id="loadingWithdrawlp" style="display:none"><img src="assets/loading.gif" /></span>
+                                  </button>
+                              </div>
+                          </div>  
+                          
+                          <div style="height:60px"></div>
+
+                      </div>
+                  </div>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery3.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/detect-provider.js"></script>
+    <script src="js/ethers.umd.js"></script>
+    <script src="js/base.js"></script>
+
+    <script>
+        let balance;
+        let initSupply;
+        let currentSupply;
+        let totalSupply;
+        var totalStaked;
+        let price;
+        let usdtInPool;
+        let rabbitsInPool;
+        let unStaked;
+
+        let stakedAmount;
+        let pending;
+        let totalBalancePrice;
+
+        let pendinglp;
+        let stakedAmountlp;
+        let rewardPerBlock;
+
+        let blockNumber;
+
+        async function stake(amount) {
+            if(amount == 0){
+              alert("amount should not be zero!")
+              return false;
+            }
+            amount = amount * ETHDIV;
+            amount = amount.toLocaleString();
+            amount = amount.toString().replace(/\$|,/g, '');
+            await SEND_TX('chef', 'deposit', [0, amount]);
+        }
+
+        async function withdraw(amount) {
+            if(amount == 0){
+              alert("amount should not be zero!")
+              return false;
+            }
+            amount = amount * ETHDIV;
+            amount = amount.toLocaleString();
+            amount = amount.toString().replace(/\$|,/g, '');
+            await SEND_TX('chef', 'withdraw', [0, amount]);
+        }
+
+        async function claim(address) {
+            await SEND_TX('chef', 'claim', [0, address]);
+        }        
+
+        async function stakelp(amount) {
+            if(amount == 0){
+              alert("amount should not be zero!")
+              return false;
+            }
+            amount = amount * ETHDIV;
+            amount = amount.toLocaleString();
+            amount = amount.toString().replace(/\$|,/g, '');
+            await SEND_TX('chef', 'deposit', [1, amount]);
+        }
+
+        async function withdrawlp(amount) {
+            if(amount == 0){
+              alert("amount should not be zero!")
+              return false;
+            }
+            amount = amount * ETHDIV;
+            amount = amount.toLocaleString();
+            amount = amount.toString().replace(/\$|,/g, '');
+            console.log(amount);
+            await SEND_TX('chef', 'withdraw', [1, amount]);
+        }
+
+        async function claimlp(address) {
+            await SEND_TX('chef', 'claim', [1, address]);
+        }
+
+        async function approvelp() {
+            await SEND_TX('pair', 'approve', [ADRS["chef"], "115792089237316195423570985008687907853269984665640564039457584007913129639935"]);
+        }
+
+        (async () => {
+            // do global
+            select('#connect').onclick = async () => {
+                await conn();
+            };
+
+            await getCurAdr();
+            if (CURADR == null) {
+                // connect wallet button
+                return;
+            }
+            displayText('#connect', SHORTADR(CURADR));
+            
+            let allowancelp = ETH(await CONTS['pair'].allowance(CURADR, ADRS['chef']));
+
+            // index
+            usdtInPool = ETH(await CONTS['usdt'].balanceOf(ADRS['pair']));
+            rabbitsInPool = ETH(await CONTS['rabbit'].balanceOf(ADRS['pair']));
+            initSupply = ETH(await CONTS['rabbit'].initSupply());
+            currentSupply = ETH(await CONTS['rabbit'].totalSupply());
+            totalStaked = ETH(await CONTS['rabbit'].balanceOf(ADRS['chef']));
+            unStaked = currentSupply - totalStaked - rabbitsInPool;
+            
+            price = Number(await getPrice()).toFixed(5);
+
+            displayText("#usdtInPool", `$${COMMA(Number(usdtInPool).toFixed(3))}`);
+            displayText("#rabbitsInPool", `${COMMA(Number(rabbitsInPool).toFixed(0))}`);
+            displayText("#rabbitPrice", `$${COMMA(price)}`);
+
+            displayText("#initSupply", `${COMMA(INT(initSupply))}`);
+            displayText("#currentSupply", `${COMMA(INT(currentSupply))}`);
+            displayText("#scalingSupplyRate", `${COMMA(ROUND(currentSupply / initSupply * 100, 2))}%`);
+            displayText("#stakedRate", `$${COMMA(ROUND(totalStaked / currentSupply * 100, 2))}%`);
+            displayText("#unStaked", `${COMMA(INT(unStaked))}`);
+            displayText("#totalStaked", `${COMMA(INT(totalStaked))}`);
+
+
+            // stake
+            rewardPerBlock = INT(ETH(await CONTS['chef'].rewardPerBlock()));
+
+            let burnedRatioPerBlock = ETH(await CONTS['rabbit'].burnedRatioPerBlock(),0) / 100000;
+            displayText("#burnedRatioPerBlock", `${COMMA((burnedRatioPerBlock * 100).toFixed(3))}%`);       
+
+            let allocPoint = ETH((await CONTS['chef'].poolInfo(0))['allocPoint'],0);
+            let rewardPerBlockRabbit = rewardPerBlock * allocPoint / 100;
+            displayText("#rewardPerBlock", `${COMMA(rewardPerBlockRabbit,3)} Rabbits Per Block`);     
+            let stakedroi = INT(ETH(await CONTS['rabbit'].balanceOf(ADRS["chef"])));
+            let ra = rewardPerBlockRabbit / stakedroi;
+
+            let dailyroi = ra * 60 * 60 * 24 * 100;
+            let apy = dailyroi * 365;
+            displayText("#dailyroi", `${COMMA(dailyroi.toFixed(2))}%`);
+            displayText("#apy", `${COMMA(ROUND(apy))}%`);
+
+            let data = await CONTS['chef'].userInfo(0, CURADR);
+            stakedAmount = data[0];
+            let rewardDebt = data[1];
+            stakedAmount = INT(ETH(stakedAmount));
+            displayText("#staked", `${COMMA(stakedAmount,3)}`);
+
+            let lockEndedTimestamp = Number(data[2]);
+            let nowtime = (new Date()).getTime();
+            if (nowtime >= lockEndedTimestamp * 1000) {
+                displayText("#lockUntil", `Unlocked`);
+            }else {
+                displayText("#lockUntil", `${new Date(lockEndedTimestamp * 1000).toLocaleString() }`);
+            }
+
+            pending = ETH(await CONTS['chef'].pendingReward(0, CURADR));
+            displayText("#pending", `${COMMA(INT(pending))} `);
+
+            totalBalance = INT(ETH(await CONTS['rabbit'].balanceOf(CURADR))) + INT(ETH((await CONTS['chef'].userInfo(0,CURADR)).amount)) + INT(ETH(await CONTS['chef'].pendingReward(0,CURADR))) + INT(ETH(await CONTS['chef'].pendingReward(1,CURADR)));
+            displayText("#totalBalance", `${COMMA(INT(totalBalance))} `);
+
+            totalBalancePrice = totalBalance * price;
+            displayText("#totalBalanceInUsd", `$${COMMA(totalBalancePrice.toFixed(3))}`);
+
+            balance = ETH(await CONTS['rabbit'].balanceOf(CURADR));
+            displayText("#balance", `${COMMA(INT(balance))} `);
+
+            select('#setMaxToAmount').onclick = async () => {
+                let maxAmount = INT(ETH(await CONTS['rabbit'].balanceOf(CURADR))) - 80;
+                console.log(maxAmount)
+                select('#amount').value = maxAmount;
+            };
+
+            select('#setMaxToAmountW').onclick = async () => {
+                select('#amountW').value = stakedAmount;
+            };
+
+            select('#stake').onclick = async () => {
+                let maxAmount = INT(ETH(await CONTS['rabbit'].balanceOf(CURADR))) - 80;
+                let selectValue = select('#amount').value;
+                if(maxAmount < selectValue){
+                  alert("Your max balance Of Rabbit is burning and now "+maxAmount+". It's less than the want amount, please set the amount again!");
+                  return false;
+                }
+                $('#loadingStake').show();
+                await stake(selectValue);
+                $('#loadingStake').hide();
+            };
+
+            select('#withdraw').onclick = async () => {
+                let lockUntil = Number((await CONTS['chef'].userInfo(0,CURADR)).lockEndedTimestamp) * 1000;
+                let nowTime = (new Date()).getTime();
+                if(nowtime < lockUntil){
+                    alert("Your staked Rabbit is still locked!");
+//                    return true;
+                }
+                $("#loadingWithdraw").show();
+                let value = select('#amountW').value;
+                console.log(value)
+                await withdraw(value);
+                $("#loadingWithdraw").hide();
+            };
+
+            select('#claim').onclick = async () => {
+                $("#loadingClaim").show();
+                await claim(CURADR);
+                $("#loadingClaim").hide();
+            };            
+            // setInterval(()=>{
+            //   timeSec++;
+            //   displayText("#timeSec", `${timeSec}`);
+            // },1000)
+            
+
+
+            //stkelp
+            let allocPointlp = ETH((await CONTS['chef'].poolInfo(1))['allocPoint'],0);
+            let rewardPerBlocklp = rewardPerBlock * allocPointlp / 100;
+            displayText("#rewardPerBlocklp", `${COMMA(INT(rewardPerBlocklp),3)} Rabbits Per Block`);
+            let stakedroilp = INT(ETH(await CONTS['pair'].balanceOf(ADRS["chef"])));
+            let ralp = rewardPerBlocklp / stakedroilp;
+            let dailyroilp = ralp * 5 * 60 * 24 * 100;
+            let apylp = dailyroilp * 365;
+
+            displayText("#dailyroilp", `${COMMA(dailyroilp.toFixed(2))}%`);
+            displayText("#apylp", `${COMMA(INT(apylp))}%`);
+
+            let datalp = await CONTS['chef'].userInfo(1, CURADR);
+            stakedAmountlp = datalp[0];
+            let rewardDebtlp = datalp[1];
+            let lockEndedTimestamplp = Number(datalp[2]);
+            stakedAmountlp = INT(ETH(stakedAmountlp));
+
+            displayText("#stakedlp", `${COMMA(stakedAmountlp, 3)}`);
+            let nowtimelp = (new Date()).getTime();
+            if (nowtimelp >= lockEndedTimestamplp * 1000) {
+                displayText("#lockUntillp", `Unlocked`);
+            }else {
+                displayText("#lockUntillp", `${new Date(lockEndedTimestamplp * 1000).toLocaleString() }`);
+            }
+
+            if (allowancelp > 0) {
+                select('#approvelp').style.display="none";
+                select('#stakelp').style.display="block";
+            }else{
+                select('#stakelp').style.display="none";
+                select('#approvelp').style.display="block";
+            }
+
+            pendinglp = ETH(await CONTS['chef'].pendingReward(1, CURADR));
+            displayText("#pendinglp", `${COMMA(INT(pendinglp))} `);
+
+            balancelp = ETH(await CONTS['pair'].balanceOf(CURADR));
+            displayText("#balancelp", `${COMMA(INT(balancelp))} $LP`);
+
+            // setInterval(()=>{
+            //   timeSec++;
+            //   displayText("#timeSec", `${timeSec}`);
+            // },1000)
+
+            select('#setMaxToAmountWlp').onclick = async () => {
+                select('#amountWlp').value = stakedAmountlp;
+            };
+
+            select('#setMaxToAmountlp').onclick = async () => {
+                select('#amountlp').value = balancelp;
+            };
+
+            select('#stakelp').onclick = async () => {
+                if(allowancelp < select('#amountlp').value) {
+                    alert("allowance is less than the want amount");
+                    return false;
+                }
+                console.log(allowancelp)
+                console.log(select('#amountlp').value)
+                let balanceLp = ETH(await CONTS['pair'].balanceOf(CURADR));
+                if(balancelp < select('#amountlp').value) {
+                    alert("user balance is less than the want amount");
+                    return false;
+                }
+                console.log(balanceLp)
+                $('#loadingStakelp').show();
+                await stakelp(select('#amountlp').value);
+                $('#loadingStakelp').hide();
+            };
+
+            select('#withdrawlp').onclick = async () => {
+                $('#loadingWithdrawlp').show();
+                await withdrawlp(select('#amountWlp').value);
+                $('#loadingWithdrawlp').hide();
+            };
+
+            select('#claimlp').onclick = async () => {
+                $('#loadingClaimlp').show();
+                await claimlp(CURADR);
+                $('#loadingClaimlp').hide();
+            };
+
+            select('#approvelp').onclick = async () => {
+                $('#loadingApprovelp').show();
+                await approvelp();
+                $('#loadingApprovelp').hide();
+            };
+
+            select('#depositlp-span').onclick = () => {
+                select('#depositlp-div').style.display="block";
+                select('#withdrawlp-div').style.display="none";
+            };
+            select('#withdrawlp-span').onclick = () => {
+                select('#depositlp-div').style.display="none";
+                select('#withdrawlp-div').style.display="block";
+            };
+
+            blockNumber = PROVIDER.blockNumber;
+
+            setInterval(async ()=>{                
+              let blockNumber1 = PROVIDER.blockNumber;
+              let blocks = blockNumber1 - blockNumber;
+              console.log(blocks)
+              blockNumber = blockNumber1;
+              pending = ETH(await CONTS['chef'].pendingReward(0, CURADR));
+              displayText("#pending", `${COMMA(INT(pending))} `);
+              $("#pending").fadeOut()
+              $("#pending").fadeIn()
+
+              price = Number(await getPrice()).toFixed(5);
+              displayText("#rabbitPrice", `$${COMMA(price)}`);
+
+              totalBalance = INT(ETH(await CONTS['rabbit'].balanceOf(CURADR))) + INT(ETH((await CONTS['chef'].userInfo(0,CURADR)).amount)) + INT(ETH(await CONTS['chef'].pendingReward(0,CURADR))) + INT(ETH(await CONTS['chef'].pendingReward(1,CURADR)));
+              displayText("#totalBalance", `${COMMA(INT(totalBalance))} `);
+              $("#totalBalance").fadeOut()
+              $("#totalBalance").fadeIn()
+
+              totalBalancePrice = totalBalance * price;
+              displayText("#totalBalanceInUsd", `$${COMMA(totalBalancePrice.toFixed(3))}`);
+              
+              balance = ETH(await CONTS['rabbit'].balanceOf(CURADR));
+              balancePrice = balance * price;
+              displayText("#balance", `${COMMA(INT(balance))} `);
+              $("#balance").fadeOut()
+              $("#balance").fadeIn()
+              displayText("#balanceInUsd", `$${COMMA(balancePrice.toFixed(3))}`);
+              timeSec = 0;
+   
+              pendinglp = ETH(await CONTS['chef'].pendingReward(1, CURADR));
+              displayText("#pendinglp", `${COMMA(INT(pendinglp))} `);
+              $("#pendinglp").fadeOut()
+              $("#pendinglp").fadeIn()
+
+
+            },12000);
+
+        })();
+    </script>
+</body>
+
+</html>

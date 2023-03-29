@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
+
+$body-bg : rgba(80,158,233,0.6);
+$body-color: rgba(80,158,233,0.6);
+$font-family-sans-serif: 'Montserrat', sans-serif;
+$primary: #283447;
+$secondary: #283447;
+$light: rgba(80,158,233,0.6);
+$border-radius-lg: 2rem;
+$border-radius: 1rem;
+$border-radius-sm: 0.6rem;
+$box-shadow: 0.6rem .5rem 1rem rgba(#000000, 0.5);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
+body {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    font-weight: bolder;
+    // background: linear-gradient(180deg, #509ee9 1%, #ffffff 100%);
+}
+
+#carrto-finance {
+    .small {
+        font-size: 12px;
+    }
+
+    .fw-medium {
+        font-weight: 500;
+    }
+
+    .fw-semibold {
+        font-weight: 600;
+    }
+
+    .border {
+        border: #00000000 !important;
+    }
+
+    .border-primary {
+        border: #00000000;
+        background: rgba(255, 255, 255, 0.6);
+        // box-shadow: #0f0e0a -2px 2px 4px inset, #ffffff13 2px -2px 4px inset;
+    }
+
+    .border-secondary {
+        border-color: rgba($secondary, 0.4) !important;
+    }
+
+    @media (min-width: 992px) {
+        #sidebarContainer, #sidebar {
+            width: 280px;
+        }
+    }
+
+    #overlay {
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+        cursor: pointer;
+    }
+
+    @media (max-width: 991px) {
+        #sidebarContainer {
+            display: none;
+        }
+
+        #sidebarContainer, #sidebar {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        #sidebarContainer.show {
+            display: block;
+        }
+    }
+
+    #sidebar {
+        width: 280px;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background: rgba(255, 255, 255, 1);
+    }
+
+    #sidebar-nav li:hover{
+        color: $primary;
+    }
+
+    #sidebar-nav li.active{
+        background-color: $light;
+        // box-shadow: 0.6rem .5rem 1rem rgba($black, 0.5);
+        color: $primary;
+    }
+
+    #showSidebar{
+        margin-left: 1rem;
+    }
+
+    #connect{
+        margin-right: 1rem;
+    }
+
+
+    .social-icon-hover:hover {
+        transition: transform 0.2s ease-in;
+        transform: scale(1.2);
+        color: $primary !important;
+    }
+
+    .input-group-text {
+        background-color: $input-bg;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .ps-3 {
+        padding-left: 7.5rem !important;
+    }
+    #logo .col-2 {
+        width: 30%;
+    }
+}
+
+.rangeslider {
+    background: red;
+    position: relative;
+}
+  
+.rangeslider--horizontal {
+    height: 60px;
+    width: 100%;
+}
+
+.rangeslider__fill {
+    //background: $blue;
+    background: -webkit-linear-gradient(left, #abe0ed , #46b7d5); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #abe0ed, #46b7d5); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #abe0ed, #46b7d5); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #abe0ed, #46b7d5); /* Standard syntax (must be last) */
+}
+
+.btn {
+    background-color: rgba(255, 255, 255, 0.6);
+}
