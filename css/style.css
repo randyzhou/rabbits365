@@ -10189,9 +10189,15 @@ body {
 .img-logo {
   margin-top:40px
 }
+.img-div{
+  width:100%;
+  text-align: center;
+  padding-bottom:30px;
+  height: 535px;
+}
 @media (max-width: 575.98px) {
   .img-div {
-    height: 245px !important;
+    height: 270px !important;
   }
   .img-logo {
   margin-top:10px
