@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>The RABBIT Protocol | The Decentralized Reserve Currency</title>
+    <meta
+        content="RABBIT is building a community-owned decentralized financial infrastructure to bring more stability and transparency for the world."
+        name="description">
+    <meta content="The RABBIT Protocol | The Decentralized Reserve Currency" property="og:title">
+    <meta
+        content="RABBIT is building a community-owned decentralized financial infrastructure to bring more stability and transparency for the world."
+        property="og:description">
+    <meta content="./assets/RABBIT.png" property="og:image">
+    <meta content="The RABBIT Protocol | The Decentralized Reserve Currency" property="twitter:title">
+    <meta
+        content="RABBIT is building a community-owned decentralized financial infrastructure to bring more stability and transparency for the world."
+        property="twitter:description">
+    <meta content="./assets/RABBIT.png" property="twitter:image">
+    <meta property="og:type" content="website">
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <link href="./assets/RABBIT.png" rel="shortcut icon" type="image/x-icon">
+    <link href="./assets/RABBIT.png" rel="apple-touch-icon">
+
+    <meta name="twitter:image" content="./assets/RABBIT.png">
+    <meta name="twitter:description"
+        content="RABBIT is building a community-owned decentralized financial infrastructure to bring more stability and transparency for the world.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The RABBIT Protocol | The Decentralized Reserve Currency">
+
+    <meta property="og:image" content="./assets/RABBIT.png">
+</head>
+
+<body id="carrto-finance" style="margin-bottom: 100px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div id="sidebarContainer" class="col-auto" style="z-index: 1000002;">
+                <div id="sidebar" class="d-flex flex-column align-items-center pe-2 py-4">
+                    <a id="logo" href=""
+                        class="text-decoration-none mb-5 w-100 d-flex align-items-center ps-3 pe-2">
+                        <img src="./assets/RABBIT.png" alt="logo-icon" class="col-2">
+                    </a>
+
+                    <ul id="sidebar-nav" class="list-unstyled p-0 py-5">
+                        <li class="mb-4 py-2 px-5 rounded-pill">
+                            <a href="index.html" class="text-decoration-none text-reset d-flex align-items-center">
+                                <span class="ms-3">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="mb-4 py-2 px-5 rounded-pill">
+                            <a href="stake.html" class="text-decoration-none text-reset d-flex align-items-center">
+                                <span class="ms-3">Stake RABBIT</span>
+                            </a>
+                        </li>
+                        <li class="mb-4 py-2 px-5 rounded-pill active">
+                            <a href="stakelp.html" class="text-decoration-none text-reset d-flex align-items-center">
+                                <span class="ms-3">Stake LP</span>
+                            </a>
+                        </li>
+                        <li class="mb-4 py-2 px-5 rounded-pill">
+                            <a target="_blank" href="https://pancakeswap.finance/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0x905CE750Fc51AeD3461f10C26b884dB227C26Cd7"
+                                class="text-decoration-none text-reset d-flex align-items-center">
+                                <span class="ms-3">Swap</span>
+                            </a>
+                        </li>
+                        <li class="mb-4 py-2 px-5 rounded-pill">
+                            <a target="_blank" href="https://www.defined.fi/arb/0x5bcb14eeb3739a2140ea23535c96394597c85e82"
+                                class="text-decoration-none text-reset d-flex align-items-center">
+                                <span class="ms-3">Chart</span>
+                            </a>
+                        </li>
+                        <li class="mb-4 py-2 px-5 rounded-pill">
+                            <a target="_blank" href="https://docs.redrabbithole.xyz/"
+                                class="text-decoration-none text-reset d-flex align-items-center">
+                                <span class="ms-3">Docs</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex justify-content-around w-100 px-4">
+                        <a target="_blank" href=""
+                            class="text-decoration-none text-reset fs-5 social-icon-hover">
+                            <i class="bi bi-send-fill"></i>
+                        </a>
+                        <a target="_blank" href="https://twitter.com/RabbitHoleARB"
+                            class="text-decoration-none text-reset fs-5 social-icon-hover">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a target="_blank" href=""
+                            class="text-decoration-none text-reset fs-5 social-icon-hover">
+                            <i class="bi bi-discord"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="overlay" style="z-index: 1000001;"></div>
+
+            <main class="col pt-4">
+                <div class="w-100 position-fixed end-0 top-0" style="height: 68px; z-index: 100001;">
+                    <div class="d-flex pt-3 px-sm-3">
+                        <button type="button" id="showSidebar" class="d-lg-none btn fs-5"><i
+                                class="bi bi-list"></i></button>
+
+                        <div class="dropdown ms-auto">
+
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="">Buy
+                                        on ZYB</a></li>
+                                <li><a class="dropdown-item" href="">Chart</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <button id="connect" type="button" class="btn rounded-1 ms-3">
+                            Connect Wallet
+                        </button>
+                    </div>
+                </div>
+
+                <div class="container pt-3">
+                    <div class="col-xl-8 mx-auto">
+
+                        <div class="card border border-primary mt-5">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="p-4">
+                                        <span class="text-secondary">
+                                            APR
+                                        </span>
+                                        <h4 id="apy" class="fw-bold my-2">0%</h4>
+                                        <span id="dailyroi" class="text-secondary">Daily ROI 0%</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="card border border-primary p-4">
+                                        <span class="text-secondary">Your Balance</span>
+                                        <h4 id="balance" class="text-secondary">0.000 $LP</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card border border-primary p-3 p-sm-4 mt-5">
+                            <div class="row justify-centent-between">
+                                <div class="col">
+                                    Your $LP
+                                </div>
+
+                                <div id="balance" class="col-auto text-primary">
+                                    0.000
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 mt-3">
+                                <label for="amount" class="form-label fw-medium">Stake Amount</label>
+                                <div class="input-group border border-secondary rounded-1 mb-5">
+                                    <input type="text" id="amount"
+                                        class="form-control py-2 px-3 rounded-1 border-0 text-secondary"
+                                        aria-describedby="amount-addon" value="0" placeholder="Amount">
+                                    <span id="setMaxToAmount" class="input-group-text rounded-1 border-0">MAX</span>
+                                </div>
+                            </div>
+                            <button id="stake" style="display: none" class="btn rounded-1 hide" type="button"
+                                aria-expanded="true" data-bs-offset="0,14">
+                                <span class="fw-medium ms-1">STAKE</span>
+                                <span id="loadingStake" style="display:none"><img src="assets/loading.gif" /></span>
+                            </button>
+                            <button id="approve" class="btn rounded-1 show" type="button"
+                                aria-expanded="true" data-bs-offset="0,14">
+                                <span class="fw-medium ms-1">APPROVE</span>
+                                <span id="loadingApprove" style="display:none"><img src="assets/loading.gif" /></span>
+                            </button>
+                        </div>
+
+                        <div class="card border border-primary p-3 p-sm-4 mt-5">
+                            <div class="row justify-centent-between">
+                                <div class="col">
+                                    Your Staked
+                                </div>
+
+                                <div id="staked" class="col-auto text-primary">
+                                    0.000 $LP
+                                </div>
+                            </div>
+                            <div class="row justify-centent-between">
+                                <div class="col">
+                                    Locked until
+                                </div>
+
+                                <div id="lockUntil" class="col-auto text-primary">
+                                    ~
+                                </div>
+                            </div>
+                            <div class="row justify-centent-between">
+                                <div class="col">
+                                    Pending Rewards 
+                                </div>
+                                <div class="col-auto text-primary">
+                                    <span id="pending">~</span>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 mt-3">
+                                <label for="amount" class="form-label fw-medium">Withdraw Amount</label>
+                                <div class="input-group border border-secondary rounded-1 mb-5">
+                                    <input type="text" id="amountW"
+                                        class="form-control py-2 px-3 rounded-1 border-0 text-secondary"
+                                        aria-describedby="amount-addon" value="0" placeholder="Amount">
+                                    <span id="setMaxToAmountW" class="input-group-text rounded-1 border-0">MAX</span>
+                                </div>
+                            </div>
+                            <div class="card border border-primary p-3 p-sm-4 text-center">
+                                <button id="withdraw" class="btn rounded-1 show" type="button" id="dropdownMenuButton1"
+                                    aria-expanded="true" data-bs-offset="0,14">
+                                    <span class="fw-medium ms-1">Withdraw</span>
+                                    <span id="loadingWithdraw" style="display:none"><img src="assets/loading.gif" /></span>
+                                </button>
+                                <button id="claim" class="btn rounded-1 show mt-2" type="button" id="dropdownMenuButton1"
+                                    aria-expanded="true" data-bs-offset="0,14">
+                                    <span class="fw-medium ms-1">Claim</span>
+                                    <span id="loadingClaim" style="display:none"><img src="assets/loading.gif" /></span> 
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/jquery3.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/rangeslider.min.js"></script>
+    <script src='js/bignumber.min.js'></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/detect-provider.js"></script>
+    <script src="js/ethers.umd.js"></script>
+    <script src="js/base.js"></script>
+
+    <script>
+        document.getElementById("showSidebar").addEventListener("click", function () {
+            document.getElementById("sidebarContainer").classList.add("show");
+            document.getElementById("overlay").style.display = "block"
+        })
+
+        document.getElementById("overlay").addEventListener("click", function () {
+            document.getElementById("sidebarContainer").classList.remove("show");
+            document.getElementById("overlay").style.display = "none"
+        })
+
+        async function stake(amount) {
+            amount = amount * ETHDIV;
+            amount = amount.toLocaleString();
+            amount = amount.toString().replace(/\$|,/g, '');
+            console.log(amount)
+            await SEND_TX('chef', 'deposit', [1, amount]);
+        }
+
+        async function withdraw(amount) {
+            amount = amount * ETHDIV;
+            amount = amount.toLocaleString();
+            amount = amount.toString().replace(/\$|,/g, '');
+            console.log(amount);
+            await SEND_TX('chef', 'withdraw', [1, amount]);
+        }
+
+        async function claim(address) {
+            await SEND_TX('chef', 'claim', [1, address]);
+        }
+
+        async function approve() {
+            await SEND_TX('pair', 'approve', [ADRS["chef"], "115792089237316195423570985008687907853269984665640564039457584007913129639935"]);
+        }
+
+        let pending;
+        let balance;
+        let timeSec = 0;
+        let price;
+        
+
+        async function doAfterConnect() {
+            displayText('#connect', SHORTADR(CURADR));
+
+            price = Number(await getPrice()).toFixed(3);
+            
+            let data = await CONTS['chef'].userInfo(1, CURADR);
+            stakedAmount = data[0];
+            let rewardDebt = data[1];
+            let lockEndedTimestamp = data[2];
+
+            displayText("#staked", `${COMMA(INT(stakedAmount / ETHDIV), 18)}`);
+            if (new Date() >= lockEndedTimestamp * 1000) {
+                displayText("#lockUntil", `Unlocked`);
+            }else {
+                displayText("#lockUntil", `${new Date(lockEndedTimestamp * 1000).toLocaleString() }`);
+            }
+
+            let allowance = await CONTS['pair'].allowance(CURADR, ADRS['chef']);
+
+            if (allowance > 0) {
+                select('#approve').style.display="none";
+                select('#stake').style.display="block";
+            }else{
+                select('#stake').style.display="none";
+                select('#approve').style.display="block";
+            }
+
+            pending = ETH(await CONTS['chef'].pendingReward(1, CURADR));
+            displayText("#pending", `${COMMA(INT(pending))} $RABBIT`);
+
+            balance = ETH(await CONTS['pair'].balanceOf(CURADR));
+            displayText("#balance", `${COMMA(INT(balance))} $LP`);
+            let balancePrice = balance * price;
+            displayText("#balanceInUsd", `$${COMMA(INT(balancePrice))}`);
+            
+            // setInterval(()=>{
+            //   timeSec++;
+            //   displayText("#timeSec", `${timeSec}`);
+            // },1000)
+
+
+            let rewardPerBlock = ETH(await CONTS['chef'].rewardPerBlock(),0);
+            let staked = ETH(await CONTS['pair'].balanceOf(ADRS["chef"]),0);
+            let ra = rewardPerBlock / staked;
+            let dailyroi = ra * 4 * 60 * 24 * 100;
+            let apy = dailyroi * 365;
+
+            displayText("#dailyroi", `Daily ROI ${COMMA(ROUND(dailyroi, 3))}%`);
+            displayText("#apy", `${COMMA(ROUND(apy, 3))}%`);
+
+            select('#setMaxToAmountW').onclick = async () => {
+                select('#amountW').value = INT(stakedAmount / ETHDIV);
+            };
+
+            select('#setMaxToAmount').onclick = async () => {
+                select('#amount').value = INT(balance);
+            };
+
+            select('#stake').onclick = async () => {
+                $('#loadingStake').show();
+                await stake(select('#amount').value);
+                $('#loadingStake').hide();
+            };
+
+            select('#withdraw').onclick = async () => {
+                $('#loadingWithdraw').show();
+                await withdraw(select('#amountW').value);
+                $('#loadingWithdraw').hide();
+            };
+
+            select('#claim').onclick = async () => {
+                $('#loadingClaim').show();
+                await claim(CURADR);
+                $('#loadingClaim').hide();
+            };
+
+            select('#approve').onclick = async () => {
+                $('#loadingApprove').show();
+                await approve();
+                $('#loadingApprove').hide();
+            };
+
+            setInterval(async ()=>{                
+              pending = ETH(await CONTS['chef'].pendingReward(1, CURADR));
+              displayText("#pending", `${COMMA(INT(pending))} $RABBIT`);
+              $("#pending").fadeOut()
+              $("#pending").fadeIn()
+              timeSec = 0
+            },12000);
+        }
+
+
+        (async () => {
+            // do global
+            select('#connect').onclick = async () => { await conn(); };
+
+
+            await getCurAdr();
+              if (CURADR == null) {
+            } else {
+                await doAfterConnect();
+                // display address
+            }
+
+            $('[data-bs-toggle="tooltip"]').tooltip();
+        })();
+
+
+
+
+    </script>
+</body>
+
+</html>
