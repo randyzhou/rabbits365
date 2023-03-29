@@ -222,8 +222,8 @@
                 <div style="height:60px"></div>
 
                 <div class="card border text-center p-4">
-                    <div class="row row-cols-1 row-cols-sm-2">
-                        <div class="mb-2">
+                    <div class="row row-cols-1 row-cols-sm-3">
+                        <div class="mb-3">
                           <div class="col">
                             <div class="text-secondary mb-1">
                                 Burned Ratio Per Block
@@ -231,12 +231,20 @@
                             <h4 id="burnedRatioPerBlock" class="fw-bold">Loading</h4>
                           </div>
                         </div>
-                        <div class="mb-2">
+                        <div class="mb-3">
                           <div class="col">
                             <div class="text-secondary mb-1">
                                 Reward for Rabbit Staking
                             </div>
                             <h4 id="rewardPerBlock" class="fw-bold">Loading</h4>
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <div class="col">
+                            <div class="text-secondary mb-1">
+                                Lock Durations
+                            </div>
+                            <h4 id="lockDurations" class="fw-bold">Loading</h4>
                           </div>
                         </div>
                     </div>
@@ -363,14 +371,21 @@
                 <div style="height:60px"></div>
 
                 <div class="card border text-center p-4">
-                    <div class="row row-cols-1 row-cols-sm-1">
-
-                        <div class="mb-1">
+                    <div class="row row-cols-1 row-cols-sm-2">
+                        <div class="mb-2">
                           <div class="col">
                             <div class="text-secondary mb-1">
                                 Reward for LP Staking
                             </div>
                             <h4 id="rewardPerBlocklp" class="fw-bold">Loading</h4>
+                          </div>
+                        </div>
+                        <div class="mb-2">
+                          <div class="col">
+                            <div class="text-secondary mb-1">
+                                Lock Durations of LP
+                            </div>
+                            <h4 id="lockDurationslp" class="fw-bold">Loading</h4>
                           </div>
                         </div>
                     </div>
@@ -627,7 +642,11 @@
             rewardPerBlock = INT(ETH(await CONTS['chef'].rewardPerBlock()));
 
             let burnedRatioPerBlock = ETH(await CONTS['rabbit'].burnedRatioPerBlock(),0) / 100000;
-            displayText("#burnedRatioPerBlock", `${COMMA((burnedRatioPerBlock * 100).toFixed(3))}%`);       
+            displayText("#burnedRatioPerBlock", `${COMMA((burnedRatioPerBlock * 100).toFixed(3))}%`);      
+
+            let lockDurations = ETH(await CONTS['chef'].lockDurations(0),0);
+            let lockDurationsTime = lockDurations / (60 * 60 * 24);
+            displayText("#lockDurations", `${lockDurationsTime} days`);   
 
             let allocPoint = ETH((await CONTS['chef'].poolInfo(0))['allocPoint'],0);
             let rewardPerBlockRabbit = rewardPerBlock * allocPoint / 100;
@@ -718,6 +737,11 @@
             let allocPointlp = ETH((await CONTS['chef'].poolInfo(1))['allocPoint'],0);
             let rewardPerBlocklp = rewardPerBlock * allocPointlp / 100;
             displayText("#rewardPerBlocklp", `${COMMA(INT(rewardPerBlocklp),3)} Rabbits Per Block`);
+
+            let lockDurationslp = ETH(await CONTS['chef'].lockDurations(1),0);
+            let lockDurationslpTime = lockDurationslp / (60 * 60 * 24);
+            displayText("#lockDurationslp", `${lockDurationslpTime} days`);   
+
             let stakedroilp = INT(ETH(await CONTS['pair'].balanceOf(ADRS["chef"])));
             let ralp = rewardPerBlocklp / stakedroilp;
             let dailyroilp = ralp * 5 * 60 * 24 * 100;
