@@ -242,7 +242,7 @@
                         <div class="mb-3">
                           <div class="col">
                             <div class="text-secondary mb-1">
-                                Lock Durations
+                                Locked Durations
                             </div>
                             <h4 id="lockDurations" class="fw-bold">Loading</h4>
                           </div>
@@ -383,7 +383,7 @@
                         <div class="mb-2">
                           <div class="col">
                             <div class="text-secondary mb-1">
-                                Lock Durations of LP
+                                Locked Durations of LP
                             </div>
                             <h4 id="lockDurationslp" class="fw-bold">Loading</h4>
                           </div>
@@ -542,8 +542,6 @@
         let stakedAmountlp;
         let rewardPerBlock;
 
-        let blockNumber;
-
         async function stake(amount) {
             if(amount == 0){
               alert("amount should not be zero!")
@@ -589,7 +587,6 @@
             amount = amount * ETHDIV;
             amount = amount.toLocaleString();
             amount = amount.toString().replace(/\$|,/g, '');
-            console.log(amount);
             await SEND_TX('chef', 'withdraw', [1, amount]);
         }
 
@@ -687,7 +684,6 @@
 
             select('#setMaxToAmount').onclick = async () => {
                 let maxAmount = INT(ETH(await CONTS['rabbit'].balanceOf(CURADR))) - 80;
-                console.log(maxAmount)
                 select('#amount').value = maxAmount;
             };
 
@@ -716,7 +712,6 @@
                 }
                 $("#loadingWithdraw").show();
                 let value = select('#amountW').value;
-                console.log(value)
                 await withdraw(value);
                 $("#loadingWithdraw").hide();
             };
@@ -796,14 +791,11 @@
                     alert("allowance is less than the want amount");
                     return false;
                 }
-                console.log(allowancelp)
-                console.log(select('#amountlp').value)
                 let balanceLp = ETH(await CONTS['pair'].balanceOf(CURADR));
                 if(balancelp < select('#amountlp').value) {
                     alert("user balance is less than the want amount");
                     return false;
                 }
-                console.log(balanceLp)
                 $('#loadingStakelp').show();
                 await stakelp(select('#amountlp').value);
                 $('#loadingStakelp').hide();
@@ -836,13 +828,7 @@
                 select('#withdrawlp-div').style.display="block";
             };
 
-            blockNumber = PROVIDER.blockNumber;
-
             setInterval(async ()=>{                
-              let blockNumber1 = PROVIDER.blockNumber;
-              let blocks = blockNumber1 - blockNumber;
-              console.log(blocks)
-              blockNumber = blockNumber1;
               pending = ETH(await CONTS['chef'].pendingReward(0, CURADR));
               displayText("#pending", `${COMMA(INT(pending))} `);
               $("#pending").fadeOut()
