@@ -637,8 +637,16 @@
             await SEND_TX('chef', 'claim', [1, address]);
         }
 
-        async function approvelp() {
-            await SEND_TX('pair', 'approve', [ADRS["chef"], "115792089237316195423570985008687907853269984665640564039457584007913129639935"]);
+        async function approvelp(amount) {
+            if(amount == 0){
+              alert(t["amount should not be zero!"])
+              return false;
+            }
+            amount = amount * ETHDIV;
+            amount = amount.toLocaleString();
+            amount = amount.toString().replace(/\$|,/g, '');
+//            await SEND_TX('pair', 'approve', [ADRS["chef"], "115792089237316195423570985008687907853269984665640564039457584007913129639935"]);
+            await SEND_TX('pair', 'approve', [ADRS["chef"], amount]);
         }
 
         (async () => {
@@ -858,7 +866,7 @@
 
             select('#approvelp').onclick = async () => {
                 $('#loadingApprovelp').show();
-                await approvelp();
+                await approvelp(select('#amountlp').value);
                 $('#loadingApprovelp').hide();
             };
 
