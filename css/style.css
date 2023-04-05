@@ -10195,6 +10195,9 @@ body {
   padding-bottom:30px;
   height: 535px;
 }
+.text_hidden{
+  display: none;
+}
 @media (max-width: 575.98px) {
   .img-div {
     height: 310px !important;

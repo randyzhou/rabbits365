@@ -36,6 +36,7 @@
     <meta name="twitter:title" content="The RABBIT Protocol | The Decentralized Reserve Currency">
 
     <meta property="og:image" content="./assets/RABBIT.png">
+
 </head>
 <!--Fork of carrto website. simple and easy to use-->
 
@@ -48,9 +49,14 @@
                     <tr>
                         <td style="text-align: left;">
                         </td>
+                        <td style="width:80px;text-align: right;">  
+                          <button id="switchLanguage" type="button" class="btn lang" style="background-color: #FF494A;color:white">
+                              <span class="text_hidden">Language</span><span class="text_show"></span>
+                          </button>
+                        </td>
                         <td style="width:200px;text-align: right;">  
-                          <button id="connect" type="button" class="btn" style="background-color: #FF494A;color:white">
-                              Connect Wallet
+                          <button id="connect" type="button" class="btn lang" style="background-color: #FF494A;color:white">
+                              <span class="text_hidden">Connect Wallet</span><span class="text_show"></span>
                           </button>
                         </td>
                     </tr>
@@ -81,27 +87,25 @@
                             <div class="card">
                                 <div class="text-secondary">
                                     <div style="text-align: left;border:none; padding: 35px;font-size:14px;color:black;line-height:28px;font-family: DM Sans,sans-serif;font-weight: 500;">
-                                      <div style="margin-bottom:30px">
-                                        The notorious Rabbit Cartel are running wild globally and causing a unprecedented rabbit shortage! The rabbit supply decreases rapidly with 0.003% per block... The only way to protect your rabbits is to put them in the vault.
-                                        <br />
-                                        There are three types of vaults. Full protec vault will protect your precious RABBITS FULLY by adding your RABBITS as swap liquidity and it won't be affected by debase. Full protec vault has no locking period but no rewards. The other two vaults will protect your RABBITS fully in the form of rewards. The rewards are 100 RABBITS per block. Big protec vault earns you 8/10 of the rewards by staking RABBITS/USDT LP on PancakeSwap. The smol protec vault earns you only 2/10 of the rewards. Both of these vaults have a locking period of 7 days.
+                                      <div class="lang" style="margin-bottom:30px">
+                                        <span class="text_hidden">Intro</span><span class="text_show">The notorious Rabbit Cartel are running wild globally and causing a unprecedented rabbit shortage! The rabbit supply decreases rapidly with 0.003% per block... The only way to protect your rabbits is to put them in the vault.<br/>There are three types of vaults. Full protec vault will protect your precious RABBITS FULLY by adding your RABBITS as swap liquidity and it won't be affected by debase. Full protec vault has no locking period but no rewards. The other two vaults will protect your RABBITS fully in the form of rewards. The rewards are 100 RABBITS per block. Big protec vault earns you 8/10 of the rewards by staking RABBITS/USDT LP on PancakeSwap. The smol protec vault earns you only 2/10 of the rewards. Both of these vaults have a locking period of 7 days.</span>
                                       </div>
                                       <div class="row row-cols-1 row-cols-sm-3 text-center">
                                           <div class="mb-3">
                                             <div class="col" style="background-color: darkgoldenrod;">
-                                              <a target="_blank" style="color:white !important;text-decoration: none;" href="https://pancakeswap.finance/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0x4Ce4Fb54129Cd4A8A3Cba7b604D6507eb398E709">Swap</a>
+                                              <a target="_blank" class="lang" style="color:white !important;text-decoration: none;" href="https://pancakeswap.finance/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0x4Ce4Fb54129Cd4A8A3Cba7b604D6507eb398E709"><span class="text_hidden">Swap</span><span class="text_show"></span></a>
                                             </div>
                                           </div>
                                           
                                           <div class="mb-3">
                                             <div class="col" style="background-color: darkgoldenrod;">
-                                              <a target="_blank" style="color:white !important;text-decoration: none;" href="https://www.defined.fi/arb/0x5bcb14eeb3739a2140ea23535c96394597c85e82">Chart</a>
+                                              <a target="_blank" class="lang" style="color:white !important;text-decoration: none;" href="https://www.defined.fi/arb/0x5bcb14eeb3739a2140ea23535c96394597c85e82"><span class="text_hidden">Chart</span><span class="text_show"></span></a>
                                             </div>
                                           </div>
 
                                           <div class="mb-3">
                                             <div class="col" style="background-color: darkgoldenrod;">
-                                              <a target="_blank" style="color:white !important;text-decoration: none;" href="https://docs.redrabbithole.xyz/">Docs</a>
+                                              <a target="_blank" class="lang" style="color:white !important;text-decoration: none;" href="https://docs.redrabbithole.xyz/"><span class="text_hidden">Docs</span><span class="text_show"></span></a>
                                             </div>
                                           </div>
                                       </div>
@@ -119,8 +123,8 @@
 
                         <div class="mb-2">
                           <div class="col">
-                            <div class="text-secondary mb-1">
-                                Your Total Rabbits
+                            <div class="text-secondary mb-1 lang">
+                                <span class="text_hidden">Your Total Rabbits</span><span class="text_show"></span>
                             </div>
                             <h4 id="totalBalance" class="fw-bold">Loading</h4>
                           </div>
@@ -128,8 +132,8 @@
 
                         <div class="mb-2">
                           <div class="col">
-                            <div class="text-secondary mb-1">
-                                Your Total Estimated Balance Value
+                            <div class="text-secondary mb-1 lang">
+                                <span class="text_hidden">Your Total Estimated Balance Value</span><span class="text_show"></span>
                             </div>
                             <h4 id="totalBalanceInUsd" class="fw-bold">Loading</h4>
                           </div>  
@@ -144,8 +148,8 @@
 
                         <div class="mb-3">
                           <div class="col">
-                            <div class="text-secondary mb-1">
-                                Usdt In Pool 
+                            <div class="text-secondary mb-1 lang">
+                                <span class="text_hidden">Usdt In Pool</span><span class="text_show"></span>
                             </div>
                             <h4 id="usdtInPool" class="fw-bold">Loading</h4>
                           </div>
@@ -153,8 +157,8 @@
 
                         <div class="mb-3">
                           <div class="col">
-                            <div class="text-secondary mb-1">
-                                Rabbits In Pool 
+                            <div class="text-secondary mb-1 lang">
+                                <span class="text_hidden">Rabbits In Pool</span><span class="text_show"></span>
                             </div>
                             <h4 id="rabbitsInPool" class="fw-bold">Loading</h4>
                           </div>  
@@ -162,15 +166,17 @@
 
                         <div class="mb-3">
                           <div class="col">
-                            <div class="text-secondary mb-1">$RABBIT Price</div>
+                            <div class="text-secondary mb-1 lang">
+                              <span class="text_hidden">$RABBIT Price</span><span class="text_show"></span>
+                            </div>
                             <h4 id="rabbitPrice" class="fw-bold">Loading</h4>
                           </div>  
                         </div>
 
                         <div class="mb-3">
                           <div class="col">
-                            <div class="text-secondary mb-1">
-                                Init Supply
+                            <div class="text-secondary mb-1 lang">
+                                <span class="text_hidden">Init Supply</span><span class="text_show"></span>
                             </div>
                             <h4 id="initSupply" class="fw-bold">Loading</h4>
                           </div>  
@@ -178,8 +184,8 @@
 
                         <div class="mb-3">
                           <div class="col">
-                            <div class="text-secondary mb-1">
-                                Current Supply
+                            <div class="text-secondary mb-1 lang">
+                                <span class="text_hidden">Current Supply</span><span class="text_show"></span>
                             </div>
                             <h4 id="currentSupply" class="fw-bold">Loading</h4>
                           </div>  
@@ -187,8 +193,8 @@
 
                         <div class="mb-3">
                           <div class="col">
-                            <div class="text-secondary mb-1">
-                                Scaling Supply Rate
+                            <div class="text-secondary mb-1 lang">
+                                <span class="text_hidden">Scaling Supply Rate</span><span class="text_show"></span>
                             </div>
                             <h4 id="scalingSupplyRate" class="fw-bold">~%</h4>
                           </div>  
@@ -196,8 +202,8 @@
 
                         <div class="mb-3">
                           <div class="col">
-                            <div class="text-secondary mb-1">
-                                Staked Rate
+                            <div class="text-secondary mb-1 lang">
+                                <span class="text_hidden">Staked Rate</span><span class="text_show"></span>
                             </div>
                             <h4 id="stakedRate" class="fw-bold">~%</h4>
                           </div>  
@@ -205,14 +211,18 @@
 
                         <div class="mb-3">
                           <div class="col">
-                            <div class="text-secondary mb-1">Unstaked Burning</div>
+                            <div class="text-secondary mb-1 lang">
+                              <span class="text_hidden">Unstaked Burning</span><span class="text_show"></span>
+                            </div>
                             <h4 id="unStaked" class="fw-bold">Loading</h4>
                           </div>  
                         </div>
 
                         <div class="mb-3">
                           <div class="col">
-                            <div class="text-secondary mb-1">Total Staked</div>
+                            <div class="text-secondary mb-1 lang">
+                              <span class="text_hidden">Total Staked</span><span class="text_show"></span>
+                            </div>
                             <h4 id="totalStaked" class="fw-bold">Loading</h4>
                           </div>  
                         </div>
@@ -225,24 +235,24 @@
                     <div class="row row-cols-1 row-cols-sm-3">
                         <div class="mb-3">
                           <div class="col">
-                            <div class="text-secondary mb-1">
-                                Burned Ratio Per Block
+                            <div class="text-secondary mb-1 lang">
+                                <span class="text_hidden">Burned Ratio Per Block</span><span class="text_show"></span>
                             </div>
                             <h4 id="burnedRatioPerBlock" class="fw-bold">Loading</h4>
                           </div>
                         </div>
                         <div class="mb-3">
                           <div class="col">
-                            <div class="text-secondary mb-1">
-                                Reward for Rabbit Staking
+                            <div class="text-secondary mb-1 lang">
+                                <span class="text_hidden">Reward for Rabbit Staking</span><span class="text_show"></span>
                             </div>
                             <h4 id="rewardPerBlock" class="fw-bold">Loading</h4>
                           </div>
                         </div>
                         <div class="mb-3">
                           <div class="col">
-                            <div class="text-secondary mb-1">
-                                Locked Durations
+                            <div class="text-secondary mb-1 lang">
+                                <span class="text_hidden">Locked Durations</span><span class="text_show"></span>
                             </div>
                             <h4 id="lockDurations" class="fw-bold">Loading</h4>
                           </div>
@@ -261,8 +271,8 @@
 
                                         <div class="mb-2">
                                           <div class="col">
-                                            <div class="text-secondary mb-1">
-                                                APR
+                                            <div class="text-secondary mb-1 lang">
+                                                <span class="text_hidden">APR</span><span class="text_show"></span>
                                             </div>
                                             <h4 id="apy" class="fw-bold">Loading...</h4>
                                           </div>
@@ -270,8 +280,8 @@
 
                                         <div class="mb-2">
                                           <div class="col">
-                                            <div class="text-secondary mb-1">
-                                                Daily ROI
+                                            <div class="text-secondary mb-1 lang">
+                                                <span class="text_hidden">Daily ROI</span><span class="text_show"></span>
                                             </div>
                                             <h4 id="dailyroi" class="fw-bold">Loading...</h4>
                                           </div>  
@@ -279,8 +289,8 @@
 
                                         <div class="mb-2">
                                           <div class="col">
-                                            <div class="text-secondary mb-1">
-                                                Your burning $RABBIT 
+                                            <div class="text-secondary mb-1 lang">
+                                                <span class="text_hidden">Your burning $RABBIT</span><span class="text_show"></span>
                                             </div>
                                             <h4 id="balance" class="fw-bold">Loading</h4>
                                           </div>  
@@ -288,8 +298,8 @@
 
                                         <div class="mb-2">
                                           <div class="col">
-                                            <div class="text-secondary mb-1">
-                                                Your Staked Amount
+                                            <div class="text-secondary mb-1 lang">
+                                                <span class="text_hidden">Your Staked Amount</span><span class="text_show"></span>
                                             </div>
                                             <h4 id="staked" class="fw-bold">Loading</h4>
                                           </div>  
@@ -297,14 +307,18 @@
 
                                         <div class="mb-2">
                                           <div class="col">
-                                            <div class="text-secondary mb-1">Locked until</div>
+                                            <div class="text-secondary mb-1 lang">
+                                              <span class="text_hidden">Locked until</span><span class="text_show"></span>
+                                            </div>
                                             <h4 id="lockUntil" class="fw-bold">Loading</h4>
                                           </div>  
                                         </div>
 
                                         <div class="mb-2">
                                           <div class="col">
-                                            <div class="text-secondary mb-1">Pending Rewards</div>
+                                            <div class="text-secondary mb-1 lang">
+                                              <span class="text_hidden">Pending Rewards</span><span class="text_show"></span>
+                                            </div>
                                             <h4 id="pending" class="fw-bold">Loading</h4>
                                           </div>  
                                         </div>
@@ -314,7 +328,9 @@
                                 <div style="padding:25px;padding-top:0px">
                                     <button id="claim" class="btn rounded-2 show mt-2" type="button" id="dropdownMenuButton1"
                                         aria-expanded="true" data-bs-offset="0,14">
-                                        <span class="fw-medium ms-1">Claim Rewards</span>
+                                        <span class="fw-medium ms-1 lang">
+                                          <span class="text_hidden">Claim Rewards</span><span class="text_show"></span>
+                                        </span>
                                         <span id="loadingClaim" style="display:none"><img src="assets/loading.gif" /></span>
                                     </button>
                                 </div>
@@ -326,17 +342,21 @@
                             <div class="col" style="padding:25px">
                                 <div id="depositlp-div">
                                     <div class="col-sm-12">
-                                        <div for="amount" class="form-label fw-medium" style="text-align: left;padding-left: 5px;">Stake Amount</div>
+                                        <div for="amount" class="form-label fw-medium lang" style="text-align: left;padding-left: 5px;">
+                                          <span class="text_hidden">Stake Amount</span><span class="text_show"></span>
+                                        </div>
                                         <div class="input-group border-secondary rounded-1 mb-3" style="background-color: white;">
                                             <input type="text" id="amount"
                                                 class="form-control py-2 px-3 border-0 text-secondary"
                                                 aria-describedby="amount-addon" value="0" placeholder="Amount">
-                                            <span id="setMaxToAmount" class="input-group-text rounded-2 border-0" style="cursor: pointer;padding-left:15px;padding-right:15px">max</span>
+                                            <span id="setMaxToAmount" class="input-group-text rounded-2 border-0 lang" style="cursor: pointer;padding-left:15px;padding-right:15px"><span class="text_hidden">max</span><span class="text_show"></span></span>
                                         </div>
                                     </div>
                                     <button id="stake" class="btn rounded-2" type="button"
                                         aria-expanded="true" data-bs-offset="0,14">
-                                        <span class="fw-medium ms-1">Deposit</span>
+                                        <span class="fw-medium ms-1 lang">
+                                          <span class="text_hidden">Deposit</span><span class="text_show"></span>
+                                        </span>
                                         <span id="loadingStake" style="display:none"><img src="assets/loading.gif" /></span>
                                     </button>
                                 </div>
@@ -347,17 +367,21 @@
                             <div class="col" style="padding:25px">
                                 <div id="withdrawlp-div">
                                     <div class="col-sm-12">
-                                        <div for="amount" class="form-label fw-medium" style="text-align: left;padding-left: 5px;"> Withdraw Amount</div>
+                                        <div for="amount" class="form-label fw-medium lang" style="text-align: left;padding-left: 5px;">
+                                          <span class="text_hidden">Withdraw Amount</span><span class="text_show"></span>
+                                        </div>
                                         <div class="input-group border-secondary rounded-1 mb-3" style="background-color: white;">
                                             <input type="text" id="amountW"
                                                 class="form-control py-2 px-3 border-0 text-secondary"
                                                 aria-describedby="amount-addon" value="0" placeholder="Amount">
-                                            <span id="setMaxToAmountW" class="input-group-text rounded-2 border-0" style="cursor: pointer;padding-left:15px;padding-right:15px">max</span>
+                                            <span id="setMaxToAmountW" class="input-group-text rounded-2 border-0 lang" style="cursor: pointer;padding-left:15px;padding-right:15px"><span class="text_hidden">max</span><span class="text_show"></span></span>
                                         </div>
                                     </div>
                                     <button id="withdraw" class="btn rounded-2 show" type="button" id="dropdownMenuButton1"
                                         aria-expanded="true" data-bs-offset="0,14">
-                                        <span class="fw-medium ms-1">Withdraw</span>
+                                        <span class="fw-medium ms-1 lang">
+                                          <span class="text_hidden">Withdraw</span><span class="text_show"></span>
+                                        </span>
                                         <span id="loadingWithdraw" style="display:none"><img src="assets/loading.gif" /></span>
                                     </button>
                                 </div>
@@ -374,16 +398,16 @@
                     <div class="row row-cols-1 row-cols-sm-2">
                         <div class="mb-2">
                           <div class="col">
-                            <div class="text-secondary mb-1">
-                                Reward for LP Staking
+                            <div class="text-secondary mb-1 lang">
+                                <span class="text_hidden">Reward for LP Staking</span><span class="text_show"></span>
                             </div>
                             <h4 id="rewardPerBlocklp" class="fw-bold">Loading</h4>
                           </div>
                         </div>
                         <div class="mb-2">
                           <div class="col">
-                            <div class="text-secondary mb-1">
-                                Locked Durations of LP
+                            <div class="text-secondary mb-1 lang">
+                                <span class="text_hidden">Locked Durations of LP</span><span class="text_show"></span>
                             </div>
                             <h4 id="lockDurationslp" class="fw-bold">Loading</h4>
                           </div>
@@ -402,8 +426,8 @@
                                   <div class="row row-cols-1 row-cols-sm-2">
                                       <div class="mb-2">
                                         <div class="col">
-                                          <div class="text-secondary mb-1">
-                                              $LP APR
+                                          <div class="text-secondary mb-1 lang">
+                                              <span class="text_hidden">$LP APR</span><span class="text_show"></span>
                                           </div>
                                           <h4 id="apylp" class="fw-bold">Loading...</h4>
                                         </div>
@@ -411,8 +435,8 @@
 
                                       <div class="mb-2">
                                         <div class="col">
-                                          <div class="text-secondary mb-1">
-                                              $LP Daily ROI
+                                          <div class="text-secondary mb-1 lang">
+                                              <span class="text_hidden">$LP Daily ROI</span><span class="text_show"></span>
                                           </div>
                                           <h4 id="dailyroilp" class="fw-bold">Loading...</h4>
                                         </div>  
@@ -420,15 +444,17 @@
 
                                       <div class="mb-2">
                                         <div class="col">
-                                          <div class="text-secondary mb-1">Your Protected $LP</div>
+                                          <div class="text-secondary mb-1 lang">
+                                            <span class="text_hidden">Your Protected $LP</span><span class="text_show"></span>
+                                          </div>
                                           <h4 id="balancelp" class="fw-bold">Loading</h4>
                                         </div>  
                                       </div>
 
                                       <div class="mb-2">
                                         <div class="col">
-                                          <div class="text-secondary mb-1">
-                                              Your Staked $LP
+                                          <div class="text-secondary mb-1 lang">
+                                              <span class="text_hidden">Your Staked $LP</span><span class="text_show"></span>
                                           </div>
                                           <h4 id="stakedlp" class="fw-bold">Loading</h4>
                                         </div>  
@@ -436,14 +462,18 @@
 
                                       <div class="mb-2">
                                         <div class="col">
-                                          <div class="text-secondary mb-1">Locked $LP until</div>
+                                          <div class="text-secondary mb-1 lang">
+                                            <span class="text_hidden">Locked $LP until</span><span class="text_show"></span>
+                                          </div>
                                           <h4 id="lockUntillp" class="fw-bold">Loading</h4>
                                         </div>  
                                       </div>
 
                                       <div class="mb-2">
                                         <div class="col">
-                                          <div class="text-secondary mb-1">Pending Rewards for LP</div>
+                                          <div class="text-secondary mb-1 lang">
+                                            <span class="text_hidden">Pending Rewards for LP</span><span class="text_show"></span>
+                                          </div>
                                           <h4 id="pendinglp" class="fw-bold">Loading</h4>
                                         </div>  
                                       </div>
@@ -453,7 +483,9 @@
                               <div style="padding:25px;padding-top:0px">
                                   <button id="claimlp" class="btn rounded-2 show mt-2" type="button" id="dropdownMenuButton1"
                                       aria-expanded="true" data-bs-offset="0,14">
-                                      <span class="fw-medium ms-1">Claim Rewards for LP</span>
+                                      <span class="fw-medium ms-1 lang">
+                                        <span class="text_hidden">Claim Rewards for LP</span><span class="text_show"></span>
+                                      </span>
                                       <span id="loadingClaimlp" style="display:none"><img src="assets/loading.gif" /></span>
                                   </button>
                               </div>
@@ -465,22 +497,28 @@
 
                               <div id="depositlp-div">
                                   <div class="col-sm-12">
-                                      <div for="amount" class="form-label fw-medium" style="text-align: left;padding-left: 5px;"> Stake $LP Amount</div>
+                                      <div for="amount" class="form-label fw-medium lang" style="text-align: left;padding-left: 5px;">
+                                        <span class="text_hidden">Stake $LP Amount</span><span class="text_show"></span>
+                                      </div>
                                       <div class="input-group border-secondary rounded-1 mb-3" style="background-color: white;">
                                           <input type="text" id="amountlp"
                                               class="form-control py-2 px-3 border-0 text-secondary"
                                               aria-describedby="amount-addon" value="0" placeholder="Amount">
-                                          <span id="setMaxToAmountlp" class="input-group-text rounded-2 border-0" style="cursor: pointer;padding-left:15px;padding-right:15px">max</span>
+                                          <span id="setMaxToAmountlp" class="input-group-text rounded-2 border-0 lang" style="cursor: pointer;padding-left:15px;padding-right:15px"><span class="text_hidden">max</span><span class="text_show"></span></span>
                                       </div>
                                   </div>
                                   <button id="stakelp" style="display: none" class="btn rounded-2 hide" type="button"
                                       aria-expanded="true" data-bs-offset="0,14">
-                                      <span class="fw-medium ms-1">Deposit</span>
+                                      <span class="fw-medium ms-1 lang">
+                                        <span class="text_hidden">Deposit</span><span class="text_show"></span>
+                                      </span>
                                       <span id="loadingStakelp" style="display:none"><img src="assets/loading.gif" /></span>
                                   </button>
                                   <button id="approvelp" class="btn rounded-2 show" type="button"
                                       aria-expanded="true" data-bs-offset="0,14">
-                                      <span class="fw-medium ms-1">Approve</span>
+                                      <span class="fw-medium ms-1 lang">
+                                        <span class="text_hidden">Approve</span><span class="text_show"></span>
+                                      </span>
                                       <span id="loadingApprovelp" style="display:none"><img src="assets/loading.gif" /></span>
                                   </button>
                               </div>
@@ -491,17 +529,21 @@
                           <div class="col" style="padding:25px">
                               <div id="withdrawlp-div">
                                   <div class="col-sm-12">
-                                      <div for="amountlp" class="form-label fw-medium" style="text-align: left;padding-left: 5px;"> Withdraw $LP Amount</div>
+                                      <div for="amountlp" class="form-label fw-medium lang" style="text-align: left;padding-left: 5px;">
+                                          <span class="text_hidden">Withdraw $LP Amount</span><span class="text_show"></span>
+                                      </div>
                                       <div class="input-group border-secondary rounded-1 mb-3" style="background-color: white;">
                                           <input type="text" id="amountWlp"
                                               class="form-control py-2 px-3 border-0 text-secondary"
                                               aria-describedby="amount-addon" value="0" placeholder="Amount">
-                                          <span id="setMaxToAmountWlp" class="input-group-text rounded-2 border-0" style="cursor: pointer;padding-left:15px;padding-right:15px">max</span>
+                                          <span id="setMaxToAmountWlp" class="input-group-text rounded-2 border-0 lang" style="cursor: pointer;padding-left:15px;padding-right:15px"><span class="text_hidden">max</span><span class="text_show"></span></span>
                                       </div>
                                   </div>
                                   <button id="withdrawlp" class="btn rounded-2 show" type="button" id="dropdownMenuButton1"
                                       aria-expanded="true" data-bs-offset="0,14">
-                                      <span class="fw-medium ms-1">Withdraw</span>
+                                      <span class="fw-medium ms-1 lang">
+                                        <span class="text_hidden">Withdraw</span><span class="text_show"></span>
+                                      </span>
                                       <span id="loadingWithdrawlp" style="display:none"><img src="assets/loading.gif" /></span>
                                   </button>
                               </div>
@@ -522,6 +564,7 @@
     <script src="js/detect-provider.js"></script>
     <script src="js/ethers.umd.js"></script>
     <script src="js/base.js"></script>
+    <script src="js/t.js"></script>
 
     <script>
         let balance;

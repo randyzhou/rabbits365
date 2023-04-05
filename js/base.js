@@ -85,6 +85,31 @@ let CURBLOCK;
 })();
 
 ////////////////////////////////// base
+function loadJS(url,callback){
+  try{
+    //if($) $("#netloading").show();
+    let head = document.getElementsByTagName('head');
+    if(head&&head.length){
+      head = head[0];
+    }else{
+      head = document.body;
+    }
+    let script = document.createElement('script');
+    script.src = url;
+    script.type = "text/javascript";
+    head.appendChild(script);
+    script.onload = script.onreadystatechange = function(){
+        if ((!this.readyState) || this.readyState == "complete" || this.readyState == "loaded" ){
+          if(callback){
+            callback('ok');
+          }
+      }
+    }
+  }catch(e){
+    //if($) $("#netloading").html(e).show();
+    alert("程序错误，点击刷新");
+  }
+}
 
 function INT(n) {
     return parseInt(n);
@@ -157,7 +182,8 @@ nullDiv.style.width = '1px';
 nullDiv.style.display = 'none';
 document.body.append(nullDiv);
 
-function select(el, all = false) {
+function select (el, all = false) {
+    if (!el) return;
     el = el.trim();
     let elms = [...document.querySelectorAll(el)];
     if (elms.length == 0) {
