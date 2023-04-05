@@ -24,6 +24,7 @@ t = {
   "Claim Rewards": "领取奖励",
   "Stake Amount": "抵押金额",
   "Withdraw Amount": "提现金额",
+  "Approve": "授权",
   "Deposit": "存入",
   "Withdraw": "提现",
   "max": "最大",

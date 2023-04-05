@@ -24,6 +24,7 @@ t = {
   "Claim Rewards": "Claim Rewards",
   "Stake Amount": "Stake Amount",
   "Withdraw Amount": "Withdraw Amount",
+  "Approve": "Approve",
   "Deposit": "Deposit",
   "Withdraw": "Withdraw",
   "max": "max",
