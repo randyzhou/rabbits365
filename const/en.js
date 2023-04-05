@@ -42,5 +42,15 @@ t = {
   "Swap": "Swap",
   "Chart": "Chart",
   "Docs": "Docs",
-  "Intro": "The notorious Rabbit Cartel are running wild globally and causing a unprecedented rabbit shortage! The rabbit supply decreases rapidly with 0.001% per block... The only way to protect your rabbits is to put them in the vault.<br/>There are three types of vaults. Full protec vault will protect your precious RABBITS FULLY by adding your RABBITS as swap liquidity and it won't be affected by debase. Full protec vault has no locking period but no rewards. The other two vaults will protect your RABBITS fully in the form of rewards. The rewards are 100 RABBITS per block. Big protec vault earns you 8/10 of the rewards by staking RABBITS/USDT LP on PancakeSwap. The smol protec vault earns you only 2/10 of the rewards. Both of these vaults have a locking period of 7 days."
+  "Intro": "The notorious Rabbit Cartel are running wild globally and causing a unprecedented rabbit shortage! The rabbit supply decreases rapidly with 0.001% per block... The only way to protect your rabbits is to put them in the vault.<br/>There are three types of vaults. Full protec vault will protect your precious RABBITS FULLY by adding your RABBITS as swap liquidity and it won't be affected by debase. Full protec vault has no locking period but no rewards. The other two vaults will protect your RABBITS fully in the form of rewards. The rewards are 100 RABBITS per block. Big protec vault earns you 8/10 of the rewards by staking RABBITS/USDT LP on PancakeSwap. The smol protec vault earns you only 2/10 of the rewards. Both of these vaults have a locking period of 7 days.",
+  "amount should not be zero!": "amount should not be zero!",
+  "program panic,please reload!": "program panic,please reload!",
+  "Use Dapp to connect wallet!": "Use Dapp to connect wallet!",
+  "Transaction succeed and refresh the page.": "Transaction succeed and refresh the page.",
+  "Transaction failed，please try again!": "Transaction failed，please try again!",
+  "Network is not BSC. Requesting to change network": "Network is not BSC. Requesting to change network",
+  "Your staked Rabbit is still locked!": "Your staked Rabbit is still locked!",
+  "allowance is less than the want amount": "allowance is less than the want amount",
+  "user balance is less than the want amount": "user balance is less than the want amount",
+  
 }

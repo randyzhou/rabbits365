@@ -42,5 +42,14 @@ t = {
   "Swap": "获取RABBIT",
   "Chart": "图表",
   "Docs": "文档",
-  "Intro": "在广袤的草原上，可爱的兔子正在被不法猎人大量捕捉并杀害，导致其数量急剧减少。兔子数量以每个区块0.001%的速率在燃烧！保护你的可爱兔子不被燃烧的唯一办法就是把它们放入保护池中。<br/><br/>总共有三种类型的兔子保护池：第一种是完全保护池，把你珍爱的兔子作为流动性放入Pancake的Usdt/Rabbit兑换池中，此种保护池可免被燃烧，没有锁仓期，但是没有奖励；<br/><br/>其余两种也完全保护你的兔子并有相应奖励，每个区块总共有100个兔子繁衍奖励：大奖励池是将你在薄饼交易所里的Usdt/Rabbit的LP放入质押池中，可获得每区块奖励的80%，但是有3.5天的锁仓期；小奖励池是直接将你的兔子放到质押池中，可获得每区块总奖励的20%，此奖励池有7天的锁仓期。"
+  "Intro": "在广袤的草原上，可爱的兔子正在被不法猎人大量捕捉并杀害，导致其数量急剧减少。兔子数量以每个区块0.001%的速率在燃烧！保护你的可爱兔子不被燃烧的唯一办法就是把它们放入保护池中。<br/><br/>总共有三种类型的兔子保护池：第一种是完全保护池，把你珍爱的兔子作为流动性放入Pancake的Usdt/Rabbit兑换池中，此种保护池可免被燃烧，没有锁仓期，但是没有奖励；<br/><br/>其余两种也完全保护你的兔子并有相应奖励，每个区块总共有100个兔子繁衍奖励：大奖励池是将你在薄饼交易所里的Usdt/Rabbit的LP放入质押池中，可获得每区块奖励的80%，但是有3.5天的锁仓期；小奖励池是直接将你的兔子放到质押池中，可获得每区块总奖励的20%，此奖励池有7天的锁仓期。",
+  "amount should not be zero!": "数量不能为0!",
+  "program panic,please reload!": "程序出错，请刷新本页!",
+  "Use Dapp to connect wallet!": "使用Dapp连接钱包!",
+  "Transaction succeed and refresh the page.": "交易成功，点击刷新！",
+  "Transaction failed，please try again!": "交易失败，请重试!",
+  "Network is not BSC. Requesting to change network": "网络不是BSC， 请求重新切换网络！",
+  "Your staked Rabbit is still locked!": "你的已质押兔币仍在锁仓期！",
+  "allowance is less than the want amount": "您的授信额小于金额！",
+  "user balance is less than the want amount": "您的余额小于金额！",
 }

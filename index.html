@@ -587,7 +587,7 @@
 
         async function stake(amount) {
             if(amount == 0){
-              alert("amount should not be zero!")
+              alert(t["amount should not be zero!"])
               return false;
             }
             amount = amount * ETHDIV;
@@ -598,7 +598,7 @@
 
         async function withdraw(amount) {
             if(amount == 0){
-              alert("amount should not be zero!")
+              alert(t["amount should not be zero!"])
               return false;
             }
             amount = amount * ETHDIV;
@@ -613,7 +613,7 @@
 
         async function stakelp(amount) {
             if(amount == 0){
-              alert("amount should not be zero!")
+              alert(t["amount should not be zero!"])
               return false;
             }
             amount = amount * ETHDIV;
@@ -624,7 +624,7 @@
 
         async function withdrawlp(amount) {
             if(amount == 0){
-              alert("amount should not be zero!")
+              alert(t["amount should not be zero!"])
               return false;
             }
             amount = amount * ETHDIV;
@@ -750,7 +750,7 @@
                 let lockUntil = Number((await CONTS['chef'].userInfo(0,CURADR)).lockEndedTimestamp) * 1000;
                 let nowTime = (new Date()).getTime();
                 if(nowtime < lockUntil){
-                    alert("Your staked Rabbit is still locked!");
+                    alert(t["Your staked Rabbit is still locked!"]);
 //                    return true;
                 }
                 $("#loadingWithdraw").show();
@@ -831,12 +831,12 @@
 
             select('#stakelp').onclick = async () => {
                 if(allowancelp < select('#amountlp').value) {
-                    alert("allowance is less than the want amount");
+                    alert(t["allowance is less than the want amount"]);
                     return false;
                 }
                 let balanceLp = ETH(await CONTS['pair'].balanceOf(CURADR));
                 if(balancelp < select('#amountlp').value) {
-                    alert("user balance is less than the want amount");
+                    alert(t["user balance is less than the want amount"]);
                     return false;
                 }
                 $('#loadingStakelp').show();

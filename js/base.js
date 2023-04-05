@@ -11,7 +11,7 @@ if (window.ethereum) {
     (async function() {
         let network = await PROVIDER.getNetwork();
         if (network['chainId'] != CHAINID) {
-            alert('Network is not BSC. Requesting to change network');
+            alert(t['Network is not BSC. Requesting to change network']);
 //             await window.ethereum.request({
 //                 method: "wallet_addEthereumChain",
 //                 params: [{
@@ -107,7 +107,7 @@ function loadJS(url,callback){
     }
   }catch(e){
     //if($) $("#netloading").html(e).show();
-    alert("程序错误，点击刷新");
+    alert(t["program panic,please reload!"]);
   }
 }
 
@@ -457,7 +457,7 @@ async function conn(func = null, popup = false) {
         console.log(accounts)
     } catch (err) {
         if (err == 'ReferenceError: ethereum is not defined') {
-            alert('Use Dapp to connect wallet!');
+            alert(t['Use Dapp to connect wallet!']);
             return;
         }
 
@@ -611,7 +611,7 @@ async function SEND_TX(name, method, args, value = null, check = false) {
 
         // if (wait == true) {
         let txResult = await result.wait();
-        alert("Transaction succeed and refresh the page.");
+        alert(t["Transaction succeed and refresh the page."]);
         location.reload();
         //   console.log('txResult', txResult);
         //   return [ false, txResult ];
@@ -625,7 +625,7 @@ async function SEND_TX(name, method, args, value = null, check = false) {
     } catch (err) {
         err = await ERR(err);
         console.log(err);
-        alert("Transaction failed，please try again!");
+        alert(t["Transaction failed，please try again!"]);
         return [true, err];
     }
 }
