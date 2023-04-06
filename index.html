@@ -698,7 +698,7 @@
 
             let allocPoint = ETH((await CONTS['chef'].poolInfo(0))['allocPoint'],0);
             let rewardPerBlockRabbit = rewardPerBlock * allocPoint / 100;
-            displayText("#rewardPerBlock", `${COMMA(rewardPerBlockRabbit,3)} ${t["Rabbits Per Block"]}`);     
+            displayText("#rewardPerBlock", `${COMMA(rewardPerBlockRabbit,3)} Rabbits`);     
             let stakedroi = INT(ETH(await CONTS['rabbit'].balanceOf(ADRS["chef"])));
             let ra = rewardPerBlockRabbit / stakedroi;
 
@@ -782,7 +782,7 @@
             //stkelp
             let allocPointlp = ETH((await CONTS['chef'].poolInfo(1))['allocPoint'],0);
             let rewardPerBlocklp = rewardPerBlock * allocPointlp / 100;
-            displayText("#rewardPerBlocklp", `${COMMA(INT(rewardPerBlocklp),3)} ${t["Rabbits Per Block"]}`);
+            displayText("#rewardPerBlocklp", `${COMMA(INT(rewardPerBlocklp),3)} Rabbits`);
 
             let lockDurationslp = ETH(await CONTS['chef'].lockDurations(1),0);
             let lockDurationslpTime = lockDurationslp / (60 * 60 * 24);
