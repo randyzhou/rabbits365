@@ -52,5 +52,6 @@ t = {
   "Your staked Rabbit is still locked!": "Your staked Rabbit is still locked!",
   "allowance is less than the want amount": "allowance is less than the want amount",
   "user balance is less than the want amount": "user balance is less than the want amount",
+  "Rabbits Per Block": "Rabbits Per Block",
   
 }

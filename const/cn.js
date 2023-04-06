@@ -52,4 +52,5 @@ t = {
   "Your staked Rabbit is still locked!": "你的已质押兔币仍在锁仓期！",
   "allowance is less than the want amount": "您的授信额小于金额！",
   "user balance is less than the want amount": "您的余额小于金额！",
+  "Rabbits Per Block": "兔币数/每区块"
 }
