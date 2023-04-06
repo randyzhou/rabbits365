@@ -7,7 +7,6 @@ function switchLanguage (file_name, f) {
 
 function makeElText () {
   select(".lang", true).map(ele => {
-    console.log(ele.children.length)
     if (!ele || ele.children.length < 2) return;
     let el = ele.children[0];
     let textContent = el.textContent.trim();
